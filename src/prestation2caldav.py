@@ -52,6 +52,8 @@ def main(mail_server, mail_username, mail_password, caldav_url, caldav_username,
                 except BaseException as e:
                     logger.error(f"Event couldn't be saved: {e}", exc_info=True)
 
+    mail_service.close_connection()
+
 
 if __name__ == "__main__":
     args = parser.parse_args()
